@@ -9,9 +9,7 @@
  */
 'use strict';
 
-var login_id = document.getElementById('login_id');
 var actionElement = document.getElementById('actionElement');
-var loader = document.getElementById('loader');
 var next = document.getElementById('next');
 actionElement.style.display = 'none';
 var lastPicFileName; 
@@ -52,9 +50,11 @@ function delete_user() {
 };
 
 //next.addEventListener('click', () => { // for non ES6 browser like Safari9
+/*
 next.addEventListener('click', function() {
-  window.location.href = 'index.php';
+  window.location.href = window.location.href;
 });
+*/
 
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -101,7 +101,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       ],
       tosUrl: 'https://monitor.uedasoft.com/tos.html',
       privacyPolicyUrl: 'https://monitor.uedasoft.com/privacy.html',
-      signInSuccessUrl: window.location.href ,
+      signInSuccessUrl: window.location.href,
       credentialHelper: firebaseui.auth.CredentialHelper.NONE
       // Other config options...
     });

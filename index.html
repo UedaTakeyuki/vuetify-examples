@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="hogehoge">
+    <meta name="viewport" content="width=device-width">
+    <title>hoge page</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"></link>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+
+    <!-- mdl start -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- mdl end -->
+
+    <!-- firebase start -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <!--  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <script src="js/fbinit.js"></script>
+    <!-- firebase   end -->
+
+    <!-- for BS on Android -->
+    <style>
+      /* http://metrograph.jp/css_android_orange/ */
+      .gc-bs-android {
+      -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="app">
+      <v-app>
+        <!-- <v-navigation-drawer app></v-navigation-drawer> -->
+        <v-toolbar>
+          <v-toolbar-side-icon></v-toolbar-side-icon>
+          <v-toolbar-title>Title</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items class="hidden-sm-and-down">
+          <v-btn flat>Link One</v-btn>
+          <v-btn flat>Link Two</v-btn>
+          <v-btn flat>Link Three</v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
+
+        <div id="firebaseui-auth-container"></div>
+        <div id="actionElement" style="display:none;">
+          <div class="mdl-card mdl-shadow--2dp firebaseui-container firebaseui-id-page-email-verification-success">
+            <div class="firebaseui-card-header">
+              <h1 class="firebaseui-title">Verification Your Email Address</h1>
+            </div>
+            <div class="firebaseui-card-content">
+              <p class="firebaseui-text">We now need to verify your email address. We've sent an email to veryfiy your address. Please click the link in that email, then click "continue" button below. </p>
+            </div>
+            <div class="firebaseui-card-actions">
+              <div class="firebaseui-form-actions">
+                <button type="submit" id="next" class="firebaseui-id-submit firebaseui-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-upgraded=",MaterialButton">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <main>
+          <v-container fluid>
+          </v-container>
+        </main>
+        <v-footer fixed="true">© Atelier UEDA</v-footer>
+      </v-app>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+
+        }
+      })
+    </script>
+    <script src="js/fbmain.js?20190220_3"></script>
+  </body>
+</html>

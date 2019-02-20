@@ -1,0 +1,12 @@
+'use strict';
+
+//const config = { // for non ES6 browser like Safari9
+var config = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
+};
+firebase.initializeApp(config);
